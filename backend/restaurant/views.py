@@ -26,13 +26,13 @@ class MenuItemsView(generics.ListCreateAPIView):
     serializer_class = MenuItemSerializer
     permission_classes = [IsAuthenticated]
 
-    def get(self, request, *args, **kwargs):
-        item = get_list_or_404(MenuItem)
-        serializer = MenuItemSerializer(item, many=True)  
-        return Response(serializer.data)    
+    # def get(self, request, *args, **kwargs):
+    #     item = get_list_or_404(MenuItem)
+    #     serializer = MenuItemSerializer(item, many=True)  
+    #     return Response(serializer.data)    
     
-    def post(self, request, *args, **kwargs):
-        return Response('Menu Item POST response')   
+    # def post(self, request, *args, **kwargs):
+    #     return Response('Menu Item POST response')   
     
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
@@ -40,13 +40,13 @@ class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView
     serializer_class = MenuItemSerializer
     permission_classes = [IsAuthenticated]
 
-    def get(self, request, pk, *args, **kwargs):
-        item = get_object_or_404(MenuItem, pk=pk)
-        serializer = MenuItemSerializer(item)  
-        return Response(serializer.data)
+    # def get(self, request, pk, *args, **kwargs):
+    #     item = get_object_or_404(MenuItem, pk=pk)
+    #     serializer = MenuItemSerializer(item)  
+    #     return Response(serializer.data)
     
-    def put(self, request, *args, **kwargs):
-        return Response('Single Menu Item PUT response')   
+    # def put(self, request, *args, **kwargs):
+    #     return Response('Single Menu Item PUT response')   
     
-    def delete(self, request, *args, **kwargs):
-        return Response('Single Menu Item DELETE response')    
+    # def delete(self, request, *args, **kwargs):
+    #     return Response('Single Menu Item DELETE response')    
