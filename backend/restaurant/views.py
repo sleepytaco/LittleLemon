@@ -19,12 +19,12 @@ class UserViewSet(viewsets.ModelViewSet):
 class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     queryset = Booking.objects.all()
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
 
 class MenuItemsView(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         item = get_list_or_404(MenuItem)
@@ -38,7 +38,7 @@ class MenuItemsView(generics.ListCreateAPIView):
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk, *args, **kwargs):
         item = get_object_or_404(MenuItem, pk=pk)
