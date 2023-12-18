@@ -2,7 +2,7 @@ Hi!! The Django project is within the backend folder! Please keep in mind this p
 set up as required by the capstone project requirements.
 
 Here are a few API endpoints you can test out:
-- /api/bookings/
+- /api/booking/
 - /api/menu-items/
 - /api/menu-items/1
 
